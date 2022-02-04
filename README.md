@@ -57,13 +57,15 @@ For any additional questions, please contact **email, email, email)
 Here is where you would describe the structure of your repoistory and its contents, for exampe:
 
 ```
+├── README.md                 <- The top-level README for reviewers of this project.
 
-├── README.md               <- The top-level README for reviewers of this project.
-├── index.ipynb             <- narrative documentation of analysis in jupyter notebook
-├── presentation.pdf        <- pdf version of project presentation
-└── images
-    └── images               <- both sourced externally and generated from code
-└── data
-    └── 
+├── index.ipynb               <- narrative documentation of analysis in jupyter notebook
+
+├── presentation.pdf          <- pdf version of project presentation
+
+├── images                    <- Images generated from code and externally sourced
+
+├── data                      s<- Tweet data from CrowdFlower used in the analysis
+
 
 ```
