@@ -21,6 +21,8 @@ This project is utilizes a dataset provided by CrowdFlower to from data.world. T
 #### Distribution on Twitter sentiment
 <img src="images/sentiment_distribution.png" width=90%>
 
+
+
 >A breakdown of the sentiment distribution from the Twitter data
 
 ### Exploratory Analysis
@@ -31,7 +33,7 @@ This project is utilizes a dataset provided by CrowdFlower to from data.world. T
 Using NLTK's tweettokenizer url links, @mentions, punctuations and non-ASCII characters were removed. There was also a customized list of stopwords based off the NLTK default for English. SOme of the added stopwords are relevant to the conference generating the tweets. Next a Document Term Matrix and Term Frequency-Inverse Document Frequency were evaluated.
 
 #### Word Bigrams
-![Image](images/bigrams.png)
+<img src ='images/bigrams.png' width=90%>
 
 > This plot show the more common bigrams from positive and negative tweets.
  
