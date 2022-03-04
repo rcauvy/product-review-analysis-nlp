@@ -20,16 +20,22 @@ This project is utilizes a dataset provided by CrowdFlower to from data.world. T
 
 According to the provider of the dataset, humans that were tasked with labeling the sentiments of each tweet by evaluating which brand or product the tweet was about and if the tweet expressed positive, negative, or no emotion towards a brand and/or product.
 
+### Exploratory Analysis
 
-## Methods
-- descriptive analysis
-- choices made
-- key relevant findings from exploritory data analysis for mod 1, will be more involved in future mod
 
-## Results
+### Text Preprocessing 
 
-### Here are examples of how to embed images from your sub-folder
+Using NLTK's tweettokenizer url links, @mentions, punctuations and non-ASCII characters were removed. There was also a customized list of stopwords based off the NLTK default for English. SOme of the added stopwords are relevant to the conference generating the tweets. Next a Document Term Matrix and Term Frequency-Inverse Document Frequency were evaluated.
 
+
+### Machine Learning Modeling
+
+After preprocess the text data, it was first trained on Multinomial Naive Bayes classifier. The model was then hyperparameter tuned with GridsearchCV optimized for recall macro and then modeled again with RandomOverSampling to address the class imbalance. The next model tested was Logistic Regression and finally the Random Forest Classifier.
+The models were evaluated with sci-kit leanrs classification report, confusion matrix and roc curve.
+
+### Results
+
+The best performing models were the hyperparameter tuned RandomOverSampled Multinomial Naive Bayes model based off an average recall macro score of 0.75. The next best performance was from the tuned logistic regression model with a recall macro score of 0.72. Ultimately it can determined that the tuned logistic regression model can be selected as the best even though the accuracy score was 0.79 compared to the MNBayes 0.84. A 0.79 accuracy score on the testing data shows that it correctly classified the tweets as having positive or negative sentiments at a rate of 79%. Not a bad score for this metric, however this model (along with all the other classifiers and iterations) was better at predicting the majority class (Positive tweets) than it was at identifying the tweets with negative sentiment. 38% of the negative tweets were incorrectly categorized as positive and 19% of the positive tweet were misclassified as being negative. All of these metric scores outperform the baseline model.
 
 #### Visual 1 Title
 <img src="./images/visual1.png" width=90%>
@@ -44,13 +50,16 @@ According to the provider of the dataset, humans that were tasked with labeling 
 
 ## Recommendations:
 
-More of your own text here
+Discovered in both the exploration and modeling phase a lot of the negative sentiment were focused on the headaches from the design, the battery of the iPhone and the associated prices. The recommendations from the negative feedback is to improve the battery life and improve on the product design. Alternatively, it would appear that the pop-up store in the downtown Austin area was very well received and should be further looked into for generating buzz at other locations during new product releases. The terms 'party' and 'free' were also linked to positive tweets about the brands. The marketing team should look to plan other events with giveaways at future conferences.
 
 
 ## Limitations & Next Steps
 
-More of your own text here
+As was discovered from in both the exploration and modeling phase a lot of the negative sentiment were focused on the headaches from the design, the battery of the iPhone and the associated prices. The recommendations from the negative feedback is to improve the battery life and improve on the product design. Alternatively, it would appear that the pop-up store in the downtown Austin area was very well received and should be further looked into for generating buzz at other locations during new product releases. The terms 'party' and 'free' were also linked to positive tweets about the brands. The marketing team should look to plan other events with giveaways at future conferences.
 
+The greatest limitation to this project was the size of the dataset. The data started with 9,092 records, which is not the largest mount of data to begin with. It was then later reduced down to 3,537 after dropping the tweets with neither a positive or negative sentiment that was needed for classify into a binary target variable. There was also a significant class imbalance, where only 569 tweets or about 16% of the remaining data were labeled as having negative sentiment. I would imagine that the business stakeholders of this project would be more interested in the tweets labeled as negative from both their brand and products and that if their competitors since it leads to more actionable insights.
+
+After the size of the dataset, another limitation of this project was the target variable was a binary classification where in the real-world a multi-class model could be more useful to identify whether tweets have a positive, negative or neutral sentiment, even though the neutral tweets will not be as useful for extracting insights. The next step to this project after collecting more labeled data would be to train more complex models and other deep NLP techniques like a word2vec vecotrizer, and neural networks. Even though those models may be less interpretable, it should have a higher performance score that can be used in tandem with the successful models used here to extract coefficients.
 
 ### For further information
 Please review the narrative of our analysis in [our jupyter notebook](./index.ipynb) or review our [presentation](./SampleProjectSlides.pdf)
