@@ -31,7 +31,7 @@ This project is utilizes a dataset provided by CrowdFlower to from data.world. T
 Using NLTK's tweettokenizer url links, @mentions, punctuations and non-ASCII characters were removed. There was also a customized list of stopwords based off the NLTK default for English. SOme of the added stopwords are relevant to the conference generating the tweets. Next a Document Term Matrix and Term Frequency-Inverse Document Frequency were evaluated.
 
 #### Word Bigrams
-<img src="./images/bigrams.png" width=90%>
+![Image](images/bigrams.png)
 
 > This plot show the more common bigrams from positive and negative tweets.
  
