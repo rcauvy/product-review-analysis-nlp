@@ -19,7 +19,7 @@ Understanding public opinion about the products and services can provide valuabl
 This project is utilizes a dataset provided by CrowdFlower to from data.world. The dataset contains over 9,000 tweets from SXSW(South by Southwest) Conference about new product releases from Apple and Google. The tweet have been labeled as to which emotion they convey towards a particular product category or company brand based off of the language contained in the tweet. According to the provider of the dataset, humans that were tasked with labeling the sentiments of each tweet by evaluating which brand or product the tweet was about and if the tweet expressed positive, negative, or no emotion towards a brand and/or product.
 
 #### Distribution on Twitter sentiment
-<img src="./images/sentiment_distribution.png" width=90%>
+<img src="images/sentiment_distribution.png" width=90%>
 
 >A breakdown of the sentiment distribution from the Twitter data
 
