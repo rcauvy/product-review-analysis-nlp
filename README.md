@@ -47,7 +47,7 @@ The models were evaluated with sci-kit leanrs classification report, confusion m
 The best performing models were the hyperparameter tuned RandomOverSampled Multinomial Naive Bayes model based off an average recall macro score of 0.75. The next best performance was from the tuned logistic regression model with a recall macro score of 0.72. Ultimately it can determined that the tuned logistic regression model can be selected as the best even though the accuracy score was 0.79 compared to the MNBayes 0.84. A 0.79 accuracy score on the testing data shows that it correctly classified the tweets as having positive or negative sentiments at a rate of 79%. Not a bad score for this metric, however this model (along with all the other classifiers and iterations) was better at predicting the majority class (Positive tweets) than it was at identifying the tweets with negative sentiment. 38% of the negative tweets were incorrectly categorized as positive and 19% of the positive tweet were misclassified as being negative. All of these metric scores outperform the baseline model.
 
 #### Word Cloud Comparisons
-<img src="./images/wc_comps.png" width=90%>
+<img src="./images/wc_comp.png" width=90%>
 
 > Here you can see a the word counts visualized into wordclouds comparing the tweets with positive and negative sentiments. There is a lot of crossover but some subtle differences.
 
