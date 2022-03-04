@@ -16,9 +16,14 @@ Over the past decade conversations have increasingly shifted towards social medi
 Understanding public opinion about the products and services can provide valuable insights. Applying human capital to track social networks is simply not a scalable solution which makes the application of Natural Language Processing and Machine Learning classifiers well suited for this business problem. The objective of this project is provide the businesses  stakeholders from (Apple and Google) a model that identifies which tweets hold either a positive or negative sentiment about their brand or products from a corpus of tweets collected at the SXSW Conference. Furthermore, this project will provide the stakeholders with a list of topics and keywords that most affect public perception, leaving actionable insights for future marketing and product design decisions.
 
 ### Data:
-This project is utilizes a dataset provided by CrowdFlower to from data.world. The dataset contains over 9,000 tweets from SXSW(South by Southwest) Conference about new product releases from Apple and Google. The tweet have been labeled as to which emotion they convey towards a particular product category or company brand based off of the language contained in the tweet.
+This project is utilizes a dataset provided by CrowdFlower to from data.world. The dataset contains over 9,000 tweets from SXSW(South by Southwest) Conference about new product releases from Apple and Google. The tweet have been labeled as to which emotion they convey towards a particular product category or company brand based off of the language contained in the tweet. According to the provider of the dataset, humans that were tasked with labeling the sentiments of each tweet by evaluating which brand or product the tweet was about and if the tweet expressed positive, negative, or no emotion towards a brand and/or product.
 
-According to the provider of the dataset, humans that were tasked with labeling the sentiments of each tweet by evaluating which brand or product the tweet was about and if the tweet expressed positive, negative, or no emotion towards a brand and/or product.
+#### Distribution on Twitter sentiment
+<img src="images/sentiment_distribution.png" width=90%>
+
+
+
+>A breakdown of the sentiment distribution from the Twitter data
 
 ### Exploratory Analysis
 
@@ -27,7 +32,11 @@ According to the provider of the dataset, humans that were tasked with labeling 
 
 Using NLTK's tweettokenizer url links, @mentions, punctuations and non-ASCII characters were removed. There was also a customized list of stopwords based off the NLTK default for English. SOme of the added stopwords are relevant to the conference generating the tweets. Next a Document Term Matrix and Term Frequency-Inverse Document Frequency were evaluated.
 
+#### Word Bigrams
+<img src ='images/bigrams.png' width=90%>
 
+> This plot show the more common bigrams from positive and negative tweets.
+ 
 ### Machine Learning Modeling
 
 After preprocess the text data, it was first trained on Multinomial Naive Bayes classifier. The model was then hyperparameter tuned with GridsearchCV optimized for recall macro and then modeled again with RandomOverSampling to address the class imbalance. The next model tested was Logistic Regression and finally the Random Forest Classifier.
@@ -37,16 +46,15 @@ The models were evaluated with sci-kit leanrs classification report, confusion m
 
 The best performing models were the hyperparameter tuned RandomOverSampled Multinomial Naive Bayes model based off an average recall macro score of 0.75. The next best performance was from the tuned logistic regression model with a recall macro score of 0.72. Ultimately it can determined that the tuned logistic regression model can be selected as the best even though the accuracy score was 0.79 compared to the MNBayes 0.84. A 0.79 accuracy score on the testing data shows that it correctly classified the tweets as having positive or negative sentiments at a rate of 79%. Not a bad score for this metric, however this model (along with all the other classifiers and iterations) was better at predicting the majority class (Positive tweets) than it was at identifying the tweets with negative sentiment. 38% of the negative tweets were incorrectly categorized as positive and 19% of the positive tweet were misclassified as being negative. All of these metric scores outperform the baseline model.
 
-#### Visual 1 Title
-<img src="./images/visual1.png" width=90%>
+#### Word Cloud Comparisons
+<img src="./images/wc_comps.png" width=90%>
 
-> Sentence about visualization.
+> Here you can see a the word counts visualized into wordclouds comparing the tweets with positive and negative sentiments. There is a lot of crossover but some subtle differences.
 
-#### Visual 2 Title
-<img src="./images/visual2.png" width=90%>
+#### Logistic Regression Coefficients
+<img src="./images/lr_coeffs.png" width=90%>
 
-> Sentence about visualization.
-
+> The graph plotted above shows how the words in the tweet affects the model's classification. Words such store, Apple, and pop-up were contained in the tweet it was more likely to be categorized as positive while on the other hand if the tweet contained words such iphone, headache, design and battery led the model to predict it as having a negative sentiment.
 
 ## Recommendations:
 
@@ -60,7 +68,7 @@ The greatest limitation to this project was the size of the dataset. The data st
 After the size of the dataset, another limitation of this project was the target variable was a binary classification where in the real-world a multi-class model could be more useful to identify whether tweets have a positive, negative or neutral sentiment, even though the neutral tweets will not be as useful for extracting insights. The next step to this project after collecting more labeled data would be to train more complex models and other deep NLP techniques like a word2vec vecotrizer, and neural networks. Even though those models may be less interpretable, it should have a higher performance score that can be used in tandem with the successful models used here to extract coefficients.
 
 ### For further information
-Please review the narrative of our analysis in [our jupyter notebook](./index.ipynb) or review our [presentation](./presentation.pdf)
+Please review the narrative of the analysis in [our jupyter notebook](./index.ipynb) or review our [presentation](./presentation.pdf)
 
 For any additional questions, please contact **rcauvy@gmail.com
 
