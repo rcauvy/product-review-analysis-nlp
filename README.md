@@ -60,7 +60,7 @@ The greatest limitation to this project was the size of the dataset. The data st
 After the size of the dataset, another limitation of this project was the target variable was a binary classification where in the real-world a multi-class model could be more useful to identify whether tweets have a positive, negative or neutral sentiment, even though the neutral tweets will not be as useful for extracting insights. The next step to this project after collecting more labeled data would be to train more complex models and other deep NLP techniques like a word2vec vecotrizer, and neural networks. Even though those models may be less interpretable, it should have a higher performance score that can be used in tandem with the successful models used here to extract coefficients.
 
 ### For further information
-Please review the narrative of our analysis in [our jupyter notebook](./index.ipynb) or review our [presentation](./presentation.pdf)
+Please review the narrative of the analysis in [our jupyter notebook](./index.ipynb) or review our [presentation](./presentation.pdf)
 
 For any additional questions, please contact **rcauvy@gmail.com
 
