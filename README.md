@@ -55,21 +55,18 @@ Discovered in both the exploration and modeling phase a lot of the negative sent
 
 ## Limitations & Next Steps
 
-As was discovered from in both the exploration and modeling phase a lot of the negative sentiment were focused on the headaches from the design, the battery of the iPhone and the associated prices. The recommendations from the negative feedback is to improve the battery life and improve on the product design. Alternatively, it would appear that the pop-up store in the downtown Austin area was very well received and should be further looked into for generating buzz at other locations during new product releases. The terms 'party' and 'free' were also linked to positive tweets about the brands. The marketing team should look to plan other events with giveaways at future conferences.
-
 The greatest limitation to this project was the size of the dataset. The data started with 9,092 records, which is not the largest mount of data to begin with. It was then later reduced down to 3,537 after dropping the tweets with neither a positive or negative sentiment that was needed for classify into a binary target variable. There was also a significant class imbalance, where only 569 tweets or about 16% of the remaining data were labeled as having negative sentiment. I would imagine that the business stakeholders of this project would be more interested in the tweets labeled as negative from both their brand and products and that if their competitors since it leads to more actionable insights.
 
 After the size of the dataset, another limitation of this project was the target variable was a binary classification where in the real-world a multi-class model could be more useful to identify whether tweets have a positive, negative or neutral sentiment, even though the neutral tweets will not be as useful for extracting insights. The next step to this project after collecting more labeled data would be to train more complex models and other deep NLP techniques like a word2vec vecotrizer, and neural networks. Even though those models may be less interpretable, it should have a higher performance score that can be used in tandem with the successful models used here to extract coefficients.
 
 ### For further information
-Please review the narrative of our analysis in [our jupyter notebook](./index.ipynb) or review our [presentation](./SampleProjectSlides.pdf)
+Please review the narrative of our analysis in [our jupyter notebook](./index.ipynb) or review our [presentation](./presentation.pdf)
 
-For any additional questions, please contact **email, email, email)
+For any additional questions, please contact **rcauvy@gmail.com
 
 
 ##### Repository Structure:
 
-Here is where you would describe the structure of your repoistory and its contents, for exampe:
 
 ```
 ├── README.md                 <- The top-level README for reviewers of this project.
@@ -80,7 +77,7 @@ Here is where you would describe the structure of your repoistory and its conten
 
 ├── images                    <- Images generated from code and externally sourced
 
-├── data                      s<- Tweet data from CrowdFlower used in the analysis
+├── data                      <- Tweet data from CrowdFlower used in the analysis
 
 
 ```
