@@ -19,7 +19,7 @@ Understanding public opinion about the products and services can provide valuabl
 This project is utilizes a dataset provided by CrowdFlower to from data.world. The dataset contains over 9,000 tweets from SXSW(South by Southwest) Conference about new product releases from Apple and Google. The tweet have been labeled as to which emotion they convey towards a particular product category or company brand based off of the language contained in the tweet. According to the provider of the dataset, humans that were tasked with labeling the sentiments of each tweet by evaluating which brand or product the tweet was about and if the tweet expressed positive, negative, or no emotion towards a brand and/or product.
 
 #### Distribution on Twitter sentiment
-<img src="images/sentiment_distribution.png" width=90%>
+<img src="images/sentiment_distribution.png" width=80%>
 
 
 
@@ -33,7 +33,7 @@ This project is utilizes a dataset provided by CrowdFlower to from data.world. T
 Using NLTK's tweettokenizer url links, @mentions, punctuations and non-ASCII characters were removed. There was also a customized list of stopwords based off the NLTK default for English. SOme of the added stopwords are relevant to the conference generating the tweets. Next a Document Term Matrix and Term Frequency-Inverse Document Frequency were evaluated.
 
 #### Word Bigrams
-<img src ='images/bigrams.png' width=90%>
+<img src ='images/bigrams.png' width=80%>
 
 > This plot show the more common bigrams from positive and negative tweets.
  
@@ -47,12 +47,12 @@ The models were evaluated with sci-kit leanrs classification report, confusion m
 The best performing models were the hyperparameter tuned RandomOverSampled Multinomial Naive Bayes model based off an average recall macro score of 0.75. The next best performance was from the tuned logistic regression model with a recall macro score of 0.72. Ultimately it can determined that the tuned logistic regression model can be selected as the best even though the accuracy score was 0.79 compared to the MNBayes 0.84. A 0.79 accuracy score on the testing data shows that it correctly classified the tweets as having positive or negative sentiments at a rate of 79%. Not a bad score for this metric, however this model (along with all the other classifiers and iterations) was better at predicting the majority class (Positive tweets) than it was at identifying the tweets with negative sentiment. 38% of the negative tweets were incorrectly categorized as positive and 19% of the positive tweet were misclassified as being negative. All of these metric scores outperform the baseline model.
 
 #### Word Cloud Comparisons
-<img src="./images/wc_comp.png" width=90%>
+<img src="./images/wc_comp.png" width=80%>
 
 > Here you can see a the word counts visualized into wordclouds comparing the tweets with positive and negative sentiments. There is a lot of crossover but some subtle differences.
 
 #### Logistic Regression Coefficients
-<img src="./images/lr_coeffs.png" width=90%>
+<img src="./images/lr_coeffs.png" width=80%>
 
 > The graph plotted above shows how the words in the tweet affects the model's classification. Words such store, Apple, and pop-up were contained in the tweet it was more likely to be categorized as positive while on the other hand if the tweet contained words such iphone, headache, design and battery led the model to predict it as having a negative sentiment.
 
